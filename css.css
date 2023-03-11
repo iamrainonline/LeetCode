@@ -1,0 +1,35 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   background-color: #26292c;
+   color: white;
+}
+
+.bigbody {
+   height: 50vh;
+   position: relative;
+}
+.parent {
+   border: 3px solid blue;
+   height: 90vh;
+   position: relative;
+   display: flex;
+   gap: 10px;
+}
+
+.contacts {
+   width: 30%;
+   height: 100%;
+   border: 3px solid red;
+   overflow-y: scroll;
+}
+
+.messages {
+   height: 100%;
+   border: 3px solid white;
+   width: 100%;
+}
