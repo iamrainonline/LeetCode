@@ -78,3 +78,48 @@
 //    }
 // };
 // console.log(findWord(names));
+
+class Nodex {
+   constructor(data, next = null) {
+      this.data = data;
+      this.next = next;
+   }
+}
+
+class LinkedList {
+   constructor() {
+      this.head = null;
+      this.size = 0;
+   }
+   insertFirst(data) {
+      this.head = new Nodex(data, this.head);
+   }
+}
+
+const ll = new LinkedList();
+ll.insertFirst("babic");
+ll.insertFirst("cristi");
+ll.insertFirst("george");
+// console.log(ll);
+
+var maxProfit = function (prices) {
+   let sorted = prices.sort((a, b) => {
+      return a - b;
+   });
+   console.log(sorted);
+};
+
+// console.log(maxProfit([2, 4, 1]));
+
+let myName = "Rain";
+
+const firstNum = new Promise((resolve, reject) => {
+   resolve(3);
+});
+const secondNum = new Promise((resolve, reject) => {
+   resolve(6);
+});
+
+const total = Promise.all([firstNum, secondNum]).then((res) => {
+   console.log(res[0] + res[1]);
+});
