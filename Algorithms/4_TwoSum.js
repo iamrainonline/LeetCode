@@ -5,7 +5,6 @@ const twoSam = (nums, target) => {
       let complement = target - nums[i];
       if (complement in hashmap) {
          return [nums.indexOf(complement), i];
-         return [hashMap[complement], i];
       }
       hashmap[nums[i]] = i;
    }

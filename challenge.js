@@ -102,24 +102,24 @@ ll.insertFirst("cristi");
 ll.insertFirst("george");
 // console.log(ll);
 
-var maxProfit = function (prices) {
-   let sorted = prices.sort((a, b) => {
-      return a - b;
-   });
-   console.log(sorted);
-};
+// let x = "babic";
+// let y = "vasile";
 
-// console.log(maxProfit([2, 4, 1]));
+// // console.log({ x, y });
 
-let myName = "Rain";
+// var isValid = function (s) {
+//    const hashMap = { "(": ")", "{": "}", "[": "]" };
+//    const stack = [];
+//    for (let char of s) {
+//       if (char in hashMap) {
+//          stack.push(hashMap[char]);
+//       } else if (stack.length > 0 && stack[stack.length - 1] === char) {
+//          stack.pop();
+//       } else {
+//          return false;
+//       }
+//    }
+//    return stack.length === 0;
+// };
 
-const firstNum = new Promise((resolve, reject) => {
-   resolve(3);
-});
-const secondNum = new Promise((resolve, reject) => {
-   resolve(6);
-});
-
-const total = Promise.all([firstNum, secondNum]).then((res) => {
-   console.log(res[0] + res[1]);
-});
+// console.log(isValid("((()))"));
