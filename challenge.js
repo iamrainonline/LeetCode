@@ -49,24 +49,6 @@
 // const mySessionData = JSON.parse(sessionStorage.getItem("myStorage"));
 // console.log(mySessionData);
 
-// function pascals(numRows) {
-//    if (numRows === 0) return [];
-//    if (numRows === 1) return [[1]];
-//    let result = [];
-//    for (let row = 1; row <= numRows; row++) {
-//       let arr = [];
-//       for (let col = 0; col < row; col++) {
-//          if (col === 0 || col === row - 1) {
-//             arr.push(1);
-//          }
-//          //...
-//       }
-//       result.push(arr);
-//    }
-//    return result;
-// }
-// console.log(pascals(5));
-
 // const names = ["babic", "babicule"];
 
 // const findWord = (e) => {
@@ -79,47 +61,37 @@
 // };
 // console.log(findWord(names));
 
-class Nodex {
-   constructor(data, next = null) {
-      this.data = data;
-      this.next = next;
+var longestCommonPrefix = function (strs) {
+   //
+   let prefix = strs[0];
+   for (let i = 1; i < strs.length; i++) {
+      while (strs[i].indexOf(prefix) != 0) {
+         prefix = prefix.substring(0, prefix.length - 1);
+      }
    }
-}
+   return prefix;
+};
 
-class LinkedList {
-   constructor() {
-      this.head = null;
-      this.size = 0;
+// console.log(longestCommonPrefix(["aba", "abac", "abxacca"]));
+
+const depthFirstPrint = (graph, source) => {
+   const stack = [source];
+   while (stack.length > 0) {
+      const current = stack.pop();
+      console.log(current);
+
+      for (let neighbor of graph[current]) {
+         stack.push(neighbor);
+      }
    }
-   insertFirst(data) {
-      this.head = new Nodex(data, this.head);
-   }
-}
+};
+const graph = {
+   a: ["b", "c"],
+   b: ["d"],
+   c: ["e"],
+   d: ["f"],
+   e: [],
+   f: [],
+};
 
-const ll = new LinkedList();
-ll.insertFirst("babic");
-ll.insertFirst("cristi");
-ll.insertFirst("george");
-// console.log(ll);
-
-// let x = "babic";
-// let y = "vasile";
-
-// // console.log({ x, y });
-
-// var isValid = function (s) {
-//    const hashMap = { "(": ")", "{": "}", "[": "]" };
-//    const stack = [];
-//    for (let char of s) {
-//       if (char in hashMap) {
-//          stack.push(hashMap[char]);
-//       } else if (stack.length > 0 && stack[stack.length - 1] === char) {
-//          stack.pop();
-//       } else {
-//          return false;
-//       }
-//    }
-//    return stack.length === 0;
-// };
-
-// console.log(isValid("((()))"));
+depthFirstPrint(graph, "a");

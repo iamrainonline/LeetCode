@@ -13,7 +13,3 @@ var fizzBuzz = function (n) {
 };
 
 // console.log(fizzBuzz(6));
-
-// let x = [];
-// x[1] = "ceva";
-// console.log(x);
