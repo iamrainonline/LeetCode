@@ -10,3 +10,19 @@ function myFib(num) {
 }
 
 console.log(myFib(10));
+
+// Climbing Stairs
+
+function climbingStairCase(n) {
+   const nOfWays = [1, 2];
+   for (let i = 2; i <= n; i++) {
+      nOfWays[i] = nOfWays[i - 1] + nOfWays[i - 2];
+   }
+   return nOfWays[n - 1];
+   // de ce  -1 ?
+   // array-ul incepe de la  0,1,2,3,4
+   // nOfWays[n] (in caz ca n este 3), return  va fi   al 4lea numar d in array
+   // dar avem nevoie de  al  3-lea numar.  asa ca facem  3-1 (numarul de pasi)
+}
+
+console.log(climbingStairCase(3));
