@@ -95,3 +95,60 @@ const graph = {
    f: [],
 };
 // depthFirstPrint(graph, "a");
+
+// linked listed looool
+
+class LinkedList {
+   constructor(head) {
+      this.head = null;
+   }
+   insertFirst(data) {
+      let increment = 0;
+      let newNode = new Node(data, this.head);
+      this.head = newNode;
+      increment++;
+   }
+   displayNodes() {
+      let node = this.head;
+      while (node.next != null) {
+         console.log(node);
+         node = node.next;
+      }
+   }
+}
+
+class Node {
+   constructor(data, next) {
+      this.data = data;
+      this.next = next;
+   }
+}
+
+const ll = new LinkedList();
+ll.insertFirst("100");
+ll.insertFirst("200");
+ll.insertFirst("300");
+ll.insertFirst("400");
+ll.insertFirst("500");
+// console.log(ll);
+// ll.displayNodes();
+//
+//
+//
+//
+//
+//
+//
+
+var numRows = 7;
+var array = [];
+
+for (var i = 0; i < numRows; i++) {
+   var row = [];
+   for (var j = 0; j <= i; j++) {
+      row.push(1);
+   }
+   array.push(row);
+}
+
+console.log(array);
