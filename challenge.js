@@ -49,18 +49,6 @@
 // const mySessionData = JSON.parse(sessionStorage.getItem("myStorage"));
 // console.log(mySessionData);
 
-// const names = ["babic", "babicule"];
-
-// const findWord = (e) => {
-//    let prefix = e[0];
-//    for (let i = 1; i < e.length; i++) {
-//       while (e[i].indexOf(prefix) != 0) {
-//          prefix = prefix.substring(0, prefix.length - 1);
-//       }
-//    }
-// };
-// console.log(findWord(names));
-
 var longestCommonPrefix = function (strs) {
    //
    let prefix = strs[0];
@@ -98,57 +86,36 @@ const graph = {
 
 // linked listed looool
 
-class LinkedList {
-   constructor(head) {
-      this.head = null;
-   }
-   insertFirst(data) {
-      let increment = 0;
-      let newNode = new Node(data, this.head);
-      this.head = newNode;
-      increment++;
-   }
-   displayNodes() {
-      let node = this.head;
-      while (node.next != null) {
-         console.log(node);
-         node = node.next;
+var commonChars = function (words) {
+   //
+   let mainWord = words[0];
+   let memory = [];
+   for (let i = 1; i < words.length; i++) {
+      console.log(words[i]);
+      let x = false;
+      for (let j = 0; j < mainWord.length; j++) {
+         if (words[i].includes(mainWord[j])) {
+            x = true;
+         }
+         memory.push(mainWord[j]);
       }
    }
-}
+   return memory;
+};
 
-class Node {
-   constructor(data, next) {
-      this.data = data;
-      this.next = next;
+// console.log(commonChars(["bella", "label", "roller"]));
+
+const nums = [3, 6, 1, 0];
+var dominantIndex = function (nums) {
+   const highest = Math.max(...nums);
+   const newNums = [];
+   for (let i = 0; i < nums.length; i++) {
+      if (nums[i] !== highest) {
+         newNums.push(nums[i]);
+      }
    }
-}
+   const secondHighest = Math.max(...newNums);
+   return highest / 2 >= secondHighest ? nums.indexOf(highest) : -1;
+};
 
-const ll = new LinkedList();
-ll.insertFirst("100");
-ll.insertFirst("200");
-ll.insertFirst("300");
-ll.insertFirst("400");
-ll.insertFirst("500");
-// console.log(ll);
-// ll.displayNodes();
-//
-//
-//
-//
-//
-//
-//
-
-var numRows = 7;
-var array = [];
-
-for (var i = 0; i < numRows; i++) {
-   var row = [];
-   for (var j = 0; j <= i; j++) {
-      row.push(1);
-   }
-   array.push(row);
-}
-
-console.log(array);
+console.log(dominantIndex(nums));

@@ -9,27 +9,9 @@ body {
    color: white;
 }
 
-.bigbody {
-   height: 50vh;
-   position: relative;
+.sugar {
+   font-size: 14px;
 }
-.parent {
-   border: 3px solid blue;
-   height: 90vh;
-   position: relative;
-   display: flex;
-   gap: 10px;
-}
-
-.contacts {
-   width: 30%;
-   height: 100%;
-   border: 3px solid red;
-   overflow-y: scroll;
-}
-
-.messages {
-   height: 100%;
-   border: 3px solid white;
-   width: 100%;
+.sugar > div {
+   margin-top: 5px;
 }
