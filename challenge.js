@@ -86,36 +86,21 @@ const graph = {
 
 // linked listed looool
 
-var commonChars = function (words) {
-   //
-   let mainWord = words[0];
-   let memory = [];
-   for (let i = 1; i < words.length; i++) {
-      console.log(words[i]);
-      let x = false;
-      for (let j = 0; j < mainWord.length; j++) {
-         if (words[i].includes(mainWord[j])) {
-            x = true;
-         }
-         memory.push(mainWord[j]);
-      }
-   }
-   return memory;
-};
+// var commonChars = function (words) {
+//    //
+//    let mainWord = words[0];
+//    let memory = [];
+//    for (let i = 1; i < words.length; i++) {
+//       console.log(words[i]);
+//       let x = false;
+//       for (let j = 0; j < mainWord.length; j++) {
+//          if (words[i].includes(mainWord[j])) {
+//             x = true;
+//          }
+//          memory.push(mainWord[j]);
+//       }
+//    }
+//    return memory;
+// };
 
 // console.log(commonChars(["bella", "label", "roller"]));
-
-const nums = [3, 6, 1, 0];
-var dominantIndex = function (nums) {
-   const highest = Math.max(...nums);
-   const newNums = [];
-   for (let i = 0; i < nums.length; i++) {
-      if (nums[i] !== highest) {
-         newNums.push(nums[i]);
-      }
-   }
-   const secondHighest = Math.max(...newNums);
-   return highest / 2 >= secondHighest ? nums.indexOf(highest) : -1;
-};
-
-console.log(dominantIndex(nums));

@@ -12,3 +12,5 @@ const twoSam = (nums, target) => {
 };
 
 console.log(twoSam([3, 3, 9, 11], 6));
+
+// [3, 2,5,6, 9, 3,11], 6

@@ -1,12 +1,12 @@
-// function solutions(s) {
-//    let hashmap = {};
-//    let count = 0;
-//    for (let i = 0; i < s.length; i++) {
-//       hashmap[i] = s[i] + s[i + 1];
-//    }
+function solutions(s) {
+   let hashmap = {};
+   let count = 0;
+   for (let i = 0; i < s.length; i++) {
+      hashmap[i] = s[i] + s[i + 1];
+   }
 
-//    console.log(hashmap);
-// }
+   console.log(hashmap);
+}
 
 // solutions("aakmaakmakda");
 
