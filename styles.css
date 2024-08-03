@@ -9,9 +9,8 @@ body {
    color: white;
 }
 
-.sugar {
-   font-size: 14px;
-}
-.sugar > div {
-   margin-top: 5px;
+h1 {
+   font-size: 20px;
+   text-align: center;
+   margin-top: 50px;
 }
