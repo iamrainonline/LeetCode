@@ -64,4 +64,4 @@ const sortData = (input) => {
   }
 };
 
-// console.log(sortData(data));
+console.log(sortData(data));
