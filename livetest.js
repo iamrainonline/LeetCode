@@ -51,17 +51,18 @@ const twoSum = (arr, num) => {
 
 // twoSum(arr, 7);
 
-const data = [0, 0, 0, "undefined", null, null];
+// first unique char
+const firstUnique = (str) => {
+  let map = {};
+  for (let i = 0; i <= str.length; i++) {
+    map[str[i]] ? map[str[i]]++ : (map[str[i]] = 1);
+  }
 
-const sortData = (input) => {
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] === 0) {
-      input.splice(input[i], 1);
-      input.push(0);
-    } else {
-      return input;
+  for (keys in map) {
+    if (map[keys] === 1) {
+      return keys;
     }
   }
 };
 
-console.log(sortData(data));
+console.log(firstUnique("babic"));
