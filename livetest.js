@@ -52,17 +52,36 @@ const twoSum = (arr, num) => {
 // twoSum(arr, 7);
 
 // first unique char
-const firstUnique = (str) => {
-  let map = {};
-  for (let i = 0; i <= str.length; i++) {
-    map[str[i]] ? map[str[i]]++ : (map[str[i]] = 1);
-  }
+// const firstUnique = (str) => {
+//   let map = {};
+//   for (let i = 0; i <= str.length; i++) {
+//     map[str[i]] ? map[str[i]]++ : (map[str[i]] = 1);
+//   }
 
-  for (keys in map) {
-    if (map[keys] === 1) {
-      return keys;
+//   for (keys in map) {
+//     if (map[keys] === 1) {
+//       return keys;
+//     }
+//   }
+// };
+
+// console.log(firstUnique("babic"));
+
+// move zeroes on array
+const zeroarr = [1, 2, 3, 0, 0, 0];
+
+const moveZero = (arr) => {
+  let currIndex = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      arr[currIndex] = arr[i];
+      currIndex++;
     }
   }
+  for (let i = currIndex; i < arr.length; i++) {
+    arr[i] = 0;
+  }
+  return arr;
 };
 
-console.log(firstUnique("babic"));
+console.log(moveZero(zeroarr));
