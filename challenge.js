@@ -50,37 +50,37 @@
 // console.log(mySessionData);
 
 var longestCommonPrefix = function (strs) {
-   //
-   let prefix = strs[0];
-   for (let i = 1; i < strs.length; i++) {
-      while (strs[i].indexOf(prefix) != 0) {
-         prefix = prefix.substring(0, prefix.length - 1);
-      }
-   }
-   return prefix;
+  //
+  let prefix = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(prefix) != 0) {
+      prefix = prefix.substring(0, prefix.length - 1);
+    }
+  }
+  return prefix;
 };
 
 // console.log(longestCommonPrefix(["aba", "abac", "abxacca"]));
 
 const depthFirstPrint = (graph, source) => {
-   const stack = [source];
-   while (stack.length > 0) {
-      const current = stack.pop();
-      console.log(current);
+  const stack = [source];
+  while (stack.length > 0) {
+    const current = stack.pop();
+    console.log(current);
 
-      for (let neighbor of graph[current]) {
-         stack.push(neighbor);
-      }
-   }
+    for (let neighbor of graph[current]) {
+      stack.push(neighbor);
+    }
+  }
 };
 // Adjacency list
 const graph = {
-   a: ["b", "c"],
-   b: ["d"],
-   c: ["e"],
-   d: ["f"],
-   e: [],
-   f: [],
+  a: ["b", "c"],
+  b: ["d"],
+  c: ["e"],
+  d: ["f"],
+  e: [],
+  f: [],
 };
 // depthFirstPrint(graph, "a");
 

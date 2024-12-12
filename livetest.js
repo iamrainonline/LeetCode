@@ -25,7 +25,7 @@ ll.insertFirst("george");
 // LCM
 
 const mystrs = ["calmant", "calamar", "cal", "calculator"];
-var longestCommonPrefix = function (strs) {
+var longestCommonPrefix = (strs) => {
   //
   let prefix = strs[0];
   for (let i = 1; i < strs.length; i++) {
@@ -38,50 +38,21 @@ var longestCommonPrefix = function (strs) {
 
 // console.log(longestCommonPrefix(mystrs));
 
-const arr = [1, 2, 3, 4, 5, 6];
+// hashmap and twosum again.
+
+const arr = [2, 4, 15, 22];
+const num = 6;
 
 const twoSum = (arr, num) => {
   const hashmap = {};
   for (let i = 0; i < arr.length; i++) {
     let complement = num - arr[i];
-    hashmap[arr[i]] = complement;
-  }
-  console.log(hashmap);
-};
-
-// twoSum(arr, 7);
-
-// first unique char
-// const firstUnique = (str) => {
-//   let map = {};
-//   for (let i = 0; i <= str.length; i++) {
-//     map[str[i]] ? map[str[i]]++ : (map[str[i]] = 1);
-//   }
-
-//   for (keys in map) {
-//     if (map[keys] === 1) {
-//       return keys;
-//     }
-//   }
-// };
-
-// console.log(firstUnique("babic"));
-
-// move zeroes on array
-const zeroarr = [1, 2, 3, 0, 0, 0];
-
-const moveZero = (arr) => {
-  let currIndex = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== 0) {
-      arr[currIndex] = arr[i];
-      currIndex++;
+    if (complement in hashmap) {
+      return [arr.indexOf(complement), i];
     }
+    hashmap[arr[i]] = i;
   }
-  for (let i = currIndex; i < arr.length; i++) {
-    arr[i] = 0;
-  }
-  return arr;
+  return hashmap;
 };
 
-console.log(moveZero(zeroarr));
+console.log(twoSum(arr, 6));
