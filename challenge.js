@@ -49,58 +49,22 @@
 // const mySessionData = JSON.parse(sessionStorage.getItem("myStorage"));
 // console.log(mySessionData);
 
-var longestCommonPrefix = function (strs) {
-  //
-  let prefix = strs[0];
-  for (let i = 1; i < strs.length; i++) {
-    while (strs[i].indexOf(prefix) != 0) {
-      prefix = prefix.substring(0, prefix.length - 1);
-    }
-  }
-  return prefix;
-};
-
-// console.log(longestCommonPrefix(["aba", "abac", "abxacca"]));
-
-const depthFirstPrint = (graph, source) => {
-  const stack = [source];
-  while (stack.length > 0) {
-    const current = stack.pop();
-    console.log(current);
-
-    for (let neighbor of graph[current]) {
-      stack.push(neighbor);
-    }
-  }
-};
-// Adjacency list
-const graph = {
-  a: ["b", "c"],
-  b: ["d"],
-  c: ["e"],
-  d: ["f"],
-  e: [],
-  f: [],
-};
-// depthFirstPrint(graph, "a");
-
 // linked listed looool
 
 // var commonChars = function (words) {
-//    //
-//    let mainWord = words[0];
-//    let memory = [];
-//    for (let i = 1; i < words.length; i++) {
-//       console.log(words[i]);
-//       let x = false;
-//       for (let j = 0; j < mainWord.length; j++) {
-//          if (words[i].includes(mainWord[j])) {
-//             x = true;
-//          }
-//          memory.push(mainWord[j]);
+//   //
+//   let mainWord = words[0];
+//   let memory = [];
+//   for (let i = 1; i < words.length; i++) {
+//     let x = false;
+//     for (let j = 0; j < mainWord.length; j++) {
+//       if (words[i].includes(mainWord[j])) {
+//         x = true;
 //       }
-//    }
-//    return memory;
+//       memory.push(mainWord[j]);
+//     }
+//   }
+//   return memory;
 // };
 
 // console.log(commonChars(["bella", "label", "roller"]));
