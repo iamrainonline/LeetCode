@@ -13,4 +13,21 @@ var isValid = function (s) {
   return stack.length === 0;
 };
 
-console.log(isValid("(([[]]))"));
+// console.log(isValid("(([[]]))"));
+
+// reverse nums in array
+
+let mynums = [0, 1, 2, 3, 4, 5, 6];
+const reverseArray = (arr) => {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    [(arr[left] = arr[right])];
+
+    left++;
+    right--;
+  }
+  return arr;
+};
+
+console.log(reverseArray(mynums));
