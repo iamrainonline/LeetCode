@@ -70,7 +70,7 @@ console.log(isValid("((()))"));
 const person = {
   firstName: "john",
   greet: () => {
-    console.log("hello", +this);
+    console.log("hello", +this.name);
   },
 };
 const greetMe = person.greet;

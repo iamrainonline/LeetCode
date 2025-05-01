@@ -1,18 +1,17 @@
 function sum(d) {
-   var a = 3;
-   return function (b) {
-      console.log(a + b);
-   };
+  var a = 3;
+  return function (b) {
+    console.log(a + b);
+  };
 }
-
 var fn = sum();
 let res = fn(2);
 
 function sum(d) {
-   var a = d;
-   return function (b) {
-      console.log(a + b);
-   };
+  var a = d;
+  return function (b) {
+    console.log(a + b);
+  };
 }
 sum(3)(2);
 
@@ -20,7 +19,7 @@ sum(3)(2);
 
 var x = 21;
 var girl = function () {
-   console.log(x);
-   var x = 20;
+  console.log(x);
+  var x = 20;
 };
 girl();
