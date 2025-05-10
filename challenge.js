@@ -1,18 +1,13 @@
-var isValid = function (s) {
-  const hashMap = { "(": ")", "{": "}", "[": "]" };
-  const stack = [];
-  for (let char of s) {
-    if (char in hashMap) {
-      stack.push(hashMap[char]);
-    } else if (stack.length > 0 && stack[stack.length - 1] === char) {
-      stack.pop();
-    } else {
-      return false;
+const words = ["car", "carambol", "carne"];
+
+const longestCommonPrefix = (words) => {
+  let prefix = words[0];
+  for (let i = 1; i < words.length; i++) {
+    while (words[i].indexOf(prefix) !== 0) {
+      prefix = prefix.substring(0, prefix.length - 1);
     }
   }
-  return stack.length === 0;
+  return prefix;
 };
 
-// console.log(isValid("(([[]]))"));
-
-// reverse nums in array
+console.log(longestCommonPrefix(words));
