@@ -1,33 +1,15 @@
-const pascalTriangle = (num) => {
-  let triangle = [];
-  if (num >= 1) {
-    triangle.push([1]);
-  }
-  if (num >= 2) {
-    triangle.push([1, 1]);
-  }
+const num1 = [1, 2];
+const num2 = [3, 4];
 
-  for (let i = 2; i < num; i++) {
-    let insertOne = 1;
-
-    let prevArray = triangle[i - 1];
-
-    if (prevArray.length === 2) {
-      triangle.push([1, 2, 1]);
-    } else {
-      let add = [];
-      let left = 0;
-      let right = 1;
-
-      while (right < prevArray.length) {
-        add.push(prevArray[left] + prevArray[right]);
-        left++;
-        right++;
-      }
-      triangle.push([insertOne, ...add, insertOne]);
+// Add  num1 * num2
+const cartesianProduct = (num1, num2) => {
+  let result = [];
+  for (let i = 0; i < num1.length; i++) {
+    for (let j = 0; j < num2.length; j++) {
+      result.push([num1[i], num2[j]]);
     }
   }
-  return triangle;
+  return result;
 };
 
-console.log(pascalTriangle(10));
+console.log(cartesianProduct(num1, num2));
