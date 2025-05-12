@@ -1,35 +1,33 @@
-const pascal = (numRows) => {
-  let res = [];
-
-  if (numRows >= 1) {
-    res.push([1]);
+const pascalTriangle = (num) => {
+  let triangle = [];
+  if (num >= 1) {
+    triangle.push([1]);
   }
-  if (numRows >= 2) {
-    res.push([1, 1]);
+  if (num >= 2) {
+    triangle.push([1, 1]);
   }
 
-  for (let i = 2; i < numRows; i++) {
-    let first = 1;
-    let last = 1;
+  for (let i = 2; i < num; i++) {
+    let insertOne = 1;
 
-    let prevArr = res[i - 1];
+    let prevArray = triangle[i - 1];
 
-    if (prevArr.length === 2) {
-      res.push([first, first + last, last]);
+    if (prevArray.length === 2) {
+      triangle.push([1, 2, 1]);
     } else {
+      let add = [];
       let left = 0;
       let right = 1;
-      let add = [];
 
-      while (right < prevArr.length) {
-        add.push(prevArr[left] + prevArr[right]);
+      while (right < prevArray.length) {
+        add.push(prevArray[left] + prevArray[right]);
         left++;
         right++;
       }
-      res.push([first, ...add, last]);
+      triangle.push([insertOne, ...add, insertOne]);
     }
   }
-  return res;
+  return triangle;
 };
 
-console.log(pascal(5));
+console.log(pascalTriangle(10));
