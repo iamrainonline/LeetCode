@@ -1,15 +1,19 @@
-const num1 = [1, 2];
-const num2 = [3, 4];
+// longest common prefix
 
-// Add  num1 * num2
-const cartesianProduct = (num1, num2) => {
-  let result = [];
-  for (let i = 0; i < num1.length; i++) {
-    for (let j = 0; j < num2.length; j++) {
-      result.push([num1[i], num2[j]]);
+let words = ["xcarambol", "zcar", "ycarmangerie"];
+
+const LCP = (words) => {
+  let prefix = words[0];
+
+  for (let i = 1; i < words.length; i++) {
+    while (words[i].indexOf(prefix) !== 0) {
+      if (prefix.length === 0) {
+        return "No prefix";
+      }
+      prefix = prefix.substring(0, prefix.length - 1);
     }
   }
-  return result;
+  return prefix;
 };
 
-console.log(cartesianProduct(num1, num2));
+console.log(LCP(words));
