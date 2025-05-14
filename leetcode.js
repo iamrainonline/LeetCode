@@ -1,19 +1,26 @@
-// longest common prefix
-
-let words = ["xcarambol", "zcar", "ycarmangerie"];
-
-const LCP = (words) => {
-  let prefix = words[0];
-
-  for (let i = 1; i < words.length; i++) {
-    while (words[i].indexOf(prefix) !== 0) {
-      if (prefix.length === 0) {
-        return "No prefix";
-      }
-      prefix = prefix.substring(0, prefix.length - 1);
-    }
+class Node {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
   }
-  return prefix;
-};
+}
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
 
-console.log(LCP(words));
+  // insert first node
+
+  // insert last node
+
+  // insert at index
+
+  // get at index
+
+  // remove at index
+
+  // clear the list
+
+  // print list data
+}
