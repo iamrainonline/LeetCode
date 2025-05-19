@@ -26,15 +26,17 @@ class LinkedList {
 }
 
 var maxSubArray = function (nums) {
-  let currMax = nums[0];
-  let maxima = nums[0];
+  let currentMax = nums[0]; // current max sum *ending at* this position
+  let maxSoFar = nums[0]; // overall max we've seen
 
   for (let i = 1; i < nums.length; i++) {
-    currMax = Math.max(nums[i], currMax + nums[i]);
-    maxima = Math.max(maxima, currMax);
+    // Should I start a new subarray at nums[i], or continue the current one?
+    currentMax = Math.max(currentMax + nums[i], nums[i]);
+
+    // Update global max if current is bigger
+    maxSoFar = Math.max(maxSoFar, currentMax);
   }
 
-  return maxima;
+  return maxSoFar;
 };
-
-console.log(maxSubArray([-2, 1 - 3, 4, -1, 2, 1, -5, 4]));
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
