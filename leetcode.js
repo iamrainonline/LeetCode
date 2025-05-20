@@ -41,12 +41,19 @@ var maxSubArray = function (nums) {
 };
 // console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-const stairCase = (n) => {
-  for (let i = 1; i <= n; i++) {
-    let spaces = " ".repeat(n - i);
-    let hashes = "#".repeat(i);
-    console.log(spaces + hashes);
-  }
-};
+function birthdayCakeCandles(candles) {
+  // Write your code here
+  let hashmap = {};
 
-console.log(stairCase(6));
+  for (let i = 0; i < candles.length; i++) {
+    if (hashmap[candles[i]]) {
+      hashmap[candles[i]]++;
+    } else {
+      hashmap[candles[i]] = 1;
+    }
+  }
+  let candlesBlown = Math.max(...Object.values(hashmap));
+  return candlesBlown;
+}
+
+console.log(birthdayCakeCandles([1, 4, 4, 2]));

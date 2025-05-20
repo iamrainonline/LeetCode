@@ -13,3 +13,11 @@ const cartesianProduct = (num1, num2) => {
 };
 
 console.log(cartesianProduct(num1, num2));
+
+// Cartesian product
+// Add all products with eachother
+// example:
+// 1,3
+// 1,4
+// 2,3
+// 2,4

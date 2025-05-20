@@ -7,3 +7,12 @@ const cTree = (n) => {
 };
 
 console.log(cTree(6));
+
+// Create a christmas tree
+// example:
+
+//      #
+//     ##
+//    ###
+//  #####
+// ######
