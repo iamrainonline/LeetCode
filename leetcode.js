@@ -39,4 +39,14 @@ var maxSubArray = function (nums) {
 
   return maxSoFar;
 };
-console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+const stairCase = (n) => {
+  for (let i = 1; i <= n; i++) {
+    let spaces = " ".repeat(n - i);
+    let hashes = "#".repeat(i);
+    console.log(spaces + hashes);
+  }
+};
+
+console.log(stairCase(6));
