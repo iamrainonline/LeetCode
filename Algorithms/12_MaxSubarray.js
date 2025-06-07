@@ -3,7 +3,7 @@ var maxSubArray = function (nums) {
   let maxima = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
-    currMax = Math.max(nums[i], currMax + nums[i]);
+    currMax = Math.max(currMax + nums[i], nums[i]);
     maxima = Math.max(maxima, currMax);
   }
 
