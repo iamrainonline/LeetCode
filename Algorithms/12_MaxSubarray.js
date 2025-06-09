@@ -1,3 +1,5 @@
+// KADANE's ALGORITHM
+
 var maxSubArray = function (nums) {
   let currMax = nums[0];
   let maxima = nums[0];
