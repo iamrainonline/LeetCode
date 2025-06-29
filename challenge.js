@@ -1,16 +1,30 @@
-// KADANE's ALGORITHM
-
-var maxSubArray = function (nums) {
-  let currMax = nums[0];
-  let maxima = nums[0];
-
-  for (let i = 1; i < nums.length; i++) {
-    currMax = Math.max(currMax + nums[i], nums[i]);
-    maxima = Math.max(maxima, currMax);
-    console.log("currmax", currMax, "______", "maxima", maxima);
+const maxSubarray = (numsArr) => {
+  let currMax = numsArr[0];
+  let Maxima = numsArr[0];
+  for (let i = 1; i < numsArr.length; i++) {
+    currMax = Math.max(currMax + numsArr[i], numsArr[i]);
+    Maxima = Math.max(Maxima, currMax);
   }
-
-  return maxima;
+  return Maxima;
 };
 
-console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// console.log(maxSubarray([-2, 4, 5, -2, -2, -2, 2, -2, 11]));
+
+function fibonacci(n) {
+  let a = 0;
+  let b = 1;
+  let c;
+
+  console.log(a); // primul număr
+  if (n > 1) console.log(b); // al doilea număr
+
+  for (let i = 2; i < n; i++) {
+    c = a + b;
+    console.log(c);
+    a = b;
+    b = c;
+  }
+}
+
+// Exemplu de apel:
+fibonacci(5);
