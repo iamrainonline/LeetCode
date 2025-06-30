@@ -15,8 +15,8 @@ function fibonacci(n) {
   let b = 1;
   let c;
 
-  console.log(a); // primul număr
-  if (n > 1) console.log(b); // al doilea număr
+  console.log(a);
+  console.log(b);
 
   for (let i = 2; i < n; i++) {
     c = a + b;
@@ -27,4 +27,14 @@ function fibonacci(n) {
 }
 
 // Exemplu de apel:
-fibonacci(5);
+// fibonacci(5);
+
+const rec = (n) => {
+  if (n === 0) {
+    return;
+  }
+  console.log(n);
+  rec(n - 1);
+};
+
+rec(10);
