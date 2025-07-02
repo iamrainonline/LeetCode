@@ -27,14 +27,4 @@ function fibonacci(n) {
 }
 
 // Exemplu de apel:
-// fibonacci(5);
-
-const rec = (n) => {
-  if (n === 0) {
-    return;
-  }
-  console.log(n);
-  rec(n - 1);
-};
-
-rec(10);
+fibonacci(5);
