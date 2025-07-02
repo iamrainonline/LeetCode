@@ -1,30 +1,17 @@
-const maxSubarray = (numsArr) => {
-  let currMax = numsArr[0];
-  let Maxima = numsArr[0];
-  for (let i = 1; i < numsArr.length; i++) {
-    currMax = Math.max(currMax + numsArr[i], numsArr[i]);
-    Maxima = Math.max(Maxima, currMax);
+var isValid = function (s) {
+  const hashmap = { "(": ")", "{": "}", "[": "]" };
+  let stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] in hashmap) {
+      stack.push(hashmap[s[i]]);
+    } else if (stack.length > 0 && stack[stack.length - 1] === s[i]) {
+      stack.pop();
+    } else {
+      return false;
+    }
   }
-  return Maxima;
+  return stack.length === 0;
 };
 
-// console.log(maxSubarray([-2, 4, 5, -2, -2, -2, 2, -2, 11]));
-
-function fibonacci(n) {
-  let a = 0;
-  let b = 1;
-  let c;
-
-  console.log(a);
-  console.log(b);
-
-  for (let i = 2; i < n; i++) {
-    c = a + b;
-    console.log(c);
-    a = b;
-    b = c;
-  }
-}
-
-// Exemplu de apel:
-fibonacci(5);
+console.log(isValid("([{}])"));
