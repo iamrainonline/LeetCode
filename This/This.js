@@ -3,9 +3,8 @@ class Person {
     this.name = "bob";
   }
   sayHello() {
-    const that = this;
     setTimeout(function () {
-      console.log(that.name);
+      console.log(this.name);
     }, 1000);
   }
 }

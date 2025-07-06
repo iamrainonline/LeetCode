@@ -1,45 +1,47 @@
-const names = {
-  name: "vasile",
+const user = {
+  name: "Cristian",
+  normalFunc: function () {
+    console.log("normal:", this.name);
+  },
+  arrowFunc: () => {
+    console.log("arrow:", this.name);
+  },
 };
 
-function info(age) {
-  this.age = age = 30;
-  console.log(this.name, this.age);
-  console.log(this);
-}
+// user.normalFunc(); // linia 1
+// user.arrowFunc(); // linia 2
 
-// info.call(names);
+// class Person {
+//   constructor() {
+//     this.name = "bob";
+//   }
+//   sayHello() {
+//     setTimeout(function () {
+//       console.log(this.name);
+//     }, 1000);
+//   }
+// }
 
-const myName = {
-  name: "ion",
+// const p = new Person();
+// p.sayHello();
+
+// let nums = [1, 2, 3];
+
+let counter = 0;
+const getData = () => {
+  console.log("fetchin data", counter++);
 };
 
-class Person {
-  constructor() {
-    this.name = "bob";
-  }
+const doSomeMagic = function (fn, delay) {
+  let timer;
+  return function () {
+    let context = this;
+    args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      getData.apply(context, arguments);
+    }, delay);
+  };
+};
 
-  sayHello() {
-    setTimeout(function () {
-      // console.log(this);
-    });
-  }
-}
-
-const p = new Person();
-p.sayHello();
-
-function outer() {
-  var num = 1;
-  function inner() {
-    console.log(num++);
-  }
-  return inner;
-}
-
-var inner = outer();
-// inner();
-// inner();
-outer()();
-outer()();
-outer()();
+const betterFunction = doSomeMagic(getData, 300);
