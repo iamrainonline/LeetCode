@@ -1,42 +1,26 @@
-const user = {
-  name: "Cristian",
-  normalFunc: function () {
-    console.log("normal:", this.name);
-  },
-  arrowFunc: () => {
-    console.log("arrow:", this.name);
+const video = {
+  title: "a",
+  play() {
+    console.log(this);
   },
 };
 
-// user.normalFunc(); // linia 1
-// user.arrowFunc(); // linia 2
-
-class Person {
-  constructor() {
-    this.name = "bob";
-  }
-  sayHello() {
-    setTimeout(function () {
-      console.log(this.name);
-    }, 1000);
-  }
-}
-
-const p = new Person();
-p.sayHello();
-
-//
-
-let myAge = {
-  age: 30,
+video.stop = function () {
+  console.log(this);
 };
-const ceva = {
-  name: "babic",
-  saySomething() {
-    return () => {
-      console.log(this);
-    };
+
+let x = video.stop;
+
+// x();
+
+const Video = {
+  title: "a",
+  tags: ["1", "2", "3"],
+  showTags() {
+    this.tags.map(function (tag) {
+      console.log(this.name, tag);
+    });
   },
 };
 
-ceva.saySomething()();
+Video.showTags();
