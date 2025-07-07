@@ -11,37 +11,32 @@ const user = {
 // user.normalFunc(); // linia 1
 // user.arrowFunc(); // linia 2
 
-// class Person {
-//   constructor() {
-//     this.name = "bob";
-//   }
-//   sayHello() {
-//     setTimeout(function () {
-//       console.log(this.name);
-//     }, 1000);
-//   }
-// }
+class Person {
+  constructor() {
+    this.name = "bob";
+  }
+  sayHello() {
+    setTimeout(function () {
+      console.log(this.name);
+    }, 1000);
+  }
+}
 
-// const p = new Person();
-// p.sayHello();
+const p = new Person();
+p.sayHello();
 
-// let nums = [1, 2, 3];
+//
 
-let counter = 0;
-const getData = () => {
-  console.log("fetchin data", counter++);
+let myAge = {
+  age: 30,
+};
+const ceva = {
+  name: "babic",
+  saySomething() {
+    return () => {
+      console.log(this);
+    };
+  },
 };
 
-const doSomeMagic = function (fn, delay) {
-  let timer;
-  return function () {
-    let context = this;
-    args = arguments;
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      getData.apply(context, arguments);
-    }, delay);
-  };
-};
-
-const betterFunction = doSomeMagic(getData, 300);
+ceva.saySomething()();
