@@ -1,26 +1,19 @@
-const video = {
-  title: "a",
-  play() {
-    console.log(this);
+const user = {
+  name: "Cristian",
+  sayHello() {
+    setTimeout(() => {
+      console.log(this.name, "ba");
+    }, 1000);
+  },
+
+  normalFunc: function () {
+    console.log("normal:", this.name);
+  },
+
+  arrowFunc: () => {
+    console.log("arrow:", this.name);
   },
 };
 
-video.stop = function () {
-  console.log(this);
-};
-
-let x = video.stop;
-
-// x();
-
-const Video = {
-  title: "a",
-  tags: ["1", "2", "3"],
-  showTags() {
-    this.tags.map(function (tag) {
-      console.log(this.name, tag);
-    });
-  },
-};
-
-Video.showTags();
+user.normalFunc();
+user.arrowFunc();
