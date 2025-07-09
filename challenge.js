@@ -1,13 +1,19 @@
-const users = {
-  name: "Cristian",
+function createCounter() {
+  let count = 0; // Variabilă "privată"
 
-  outerMethod: function () {
-    console.log("outer:", this.name); // "Cristian"
+  return {
+    increment: function () {
+      count++;
+      return count;
+    },
+    getCount: function () {
+      return count;
+    },
+  };
+}
 
-    setTimeout(() => {
-      console.log(this, "wow");
-    });
-  },
-};
-
-users.outerMethod();
+const counter = createCounter();
+console.log(counter);
+// NU pot accesa count direct!
+console.log(counter.count); // undefined
+counter.count = 1000; // Nu afectează count-ul real

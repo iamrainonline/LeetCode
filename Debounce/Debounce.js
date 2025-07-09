@@ -1,4 +1,4 @@
-const input = document.querySelector("input");
+// const input = document.querySelector("input");
 
 let timeoutId;
 const onInput = (event) => {
