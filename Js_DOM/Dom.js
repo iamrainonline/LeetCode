@@ -7,3 +7,5 @@ document.addEventListener("click", (e) => {
     // console.log("ai dat click pe cutitua mica");
   }
 });
+
+//event delegation

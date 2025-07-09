@@ -1,19 +1,13 @@
-const user = {
+const users = {
   name: "Cristian",
-  sayHello() {
+
+  outerMethod: function () {
+    console.log("outer:", this.name); // "Cristian"
+
     setTimeout(() => {
-      console.log(this.name, "ba");
-    }, 1000);
-  },
-
-  normalFunc: function () {
-    console.log("normal:", this.name);
-  },
-
-  arrowFunc: () => {
-    console.log("arrow:", this.name);
+      console.log(this, "wow");
+    });
   },
 };
 
-user.normalFunc();
-user.arrowFunc();
+users.outerMethod();
