@@ -19,11 +19,12 @@ function createCounter() {
 // counter.count = 1000; // Nu afectează count-ul real
 // Memoization or a "Cache"
 
-const memoize = (...fn) => {
+const memoize = (fn) => {
   const cache = {};
-  let x = fn;
-  return function (x) {
-    console.log(x);
+  return function (...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
   };
 };
 
@@ -35,10 +36,8 @@ const ridiculousSlowFunc = (num) => {
   }
 };
 
-const fastFunction = memoize(ridiculousSlowFunc(200));
-fastFunction();
-
-// fastFunction(300000000);
+const fastFunction = memoize(ridiculousSlowFunc);
+fastFunction(200000000);
 
 // console.time();
 // console.log(ridiculousSlowFunc(3000000000));
@@ -47,5 +46,3 @@ fastFunction();
 // console.time();
 // console.log(ridiculousSlowFunc(3000000000));
 // console.timeEnd();
-
-// longest common wtf
