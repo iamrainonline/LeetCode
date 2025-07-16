@@ -25,6 +25,9 @@ const memoize = (fn) => {
     if (cache[args]) {
       return cache[args];
     }
+    const result = fn(...args);
+    cache[args] = result;
+    return result;
   };
 };
 
@@ -37,12 +40,23 @@ const ridiculousSlowFunc = (num) => {
 };
 
 const fastFunction = memoize(ridiculousSlowFunc);
-fastFunction(200000000);
 
 // console.time();
-// console.log(ridiculousSlowFunc(3000000000));
+// console.log(fastFunction(3000000000));
 // console.timeEnd();
 
-// console.time();
-// console.log(ridiculousSlowFunc(3000000000));
-// console.timeEnd();
+var isValid = function (s) {
+  const hashmap = { "(": ")", "{": "}", "[": "]" };
+  const stack = [];
+  for (char of s) {
+    if (char in hashmap) {
+      stack.push(hashmap[char]);
+    } else if (stack[stack.length - 1] === char) {
+      stack.pop();
+    } else {
+      return false;
+    }
+  }
+};
+
+console.log(isValid("{[]}"));
