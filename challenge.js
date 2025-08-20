@@ -59,4 +59,37 @@ var isValid = function (s) {
   }
 };
 
-console.log(isValid("{[]}"));
+// console.log(isValid("{[]}"));
+const input = document.querySelector("#mybtn");
+
+let timeoutId;
+const onInput = (event) => {
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+  }
+  timeoutId = setTimeout(() => {
+    console.log("Fetching..");
+    fetchData("some random api");
+  }, 1000);
+};
+
+input.addEventListener("onkeypress", onInput);
+
+// find duplicates and return []
+
+let nums = [7, 1, 2, 3, 4, 3, 7, 2];
+// 2,3
+
+const findDuplicates = (arr) => {
+  let duplicates = [];
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (newArr.includes(arr[i])) {
+      duplicates.push(arr[i]);
+    }
+    newArr.push(arr[i]);
+  }
+  return duplicates;
+};
+
+console.log(findDuplicates(nums));
