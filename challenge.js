@@ -91,10 +91,19 @@ for (var i = 0; i < 3; i++) {
   // setTimeout(console.log.bind(null, i), 1000);
 }
 
-// set -
-// * sets cannot contain duplicate values
+// cartesian product
 
-const set = new Set([1, 2, 3]);
-set.add(4);
+let num1 = [1, 2, 3];
+let num2 = [4, 5, 6];
 
-console.log(set.has(1));
+const cartesian = (arg1, arg2) => {
+  let total = [];
+  for (let i = 0; i < arg1.length; i++) {
+    for (let j = 0; j < arg2.length; j++) {
+      total.push(arg1[i] + arg2[j]);
+    }
+  }
+  return total;
+};
+
+console.log(cartesian(num1, num2));
