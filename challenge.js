@@ -93,10 +93,8 @@ for (var i = 0; i < 3; i++) {
 
 // set -
 // * sets cannot contain duplicate values
-// set primeste un Array ca argument si returneaza un obiect,
-// deci, mapam cu "for item of"
-const set = new Set([1, 2, 3]);
 
-for (let item of set) {
-  console.log(item);
-}
+const set = new Set([1, 2, 3]);
+set.add(4);
+
+console.log(set.has(1));
