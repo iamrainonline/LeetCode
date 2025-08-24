@@ -19,3 +19,24 @@ button {
   padding: 5px;
   font-size: 21px;
 }
+
+.dot {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.438);
+  border-radius: 50%;
+  animation-direction: alternate;
+  transition: transform 1.3s ease;
+}
+
+.dot::after {
+  content: " ";
+  background-color: rgba(0, 0, 255, 0.425);
+  height: 40px;
+  width: 40px;
+  left: -5px;
+  top: -5px;
+  position: absolute;
+  border-radius: 50%;
+}
