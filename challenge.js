@@ -91,4 +91,4 @@ for (var i = 0; i < 3; i++) {
   // setTimeout(console.log.bind(null, i), 1000);
 }
 
-// set
+// set - * sets cannot contain duplicate values
